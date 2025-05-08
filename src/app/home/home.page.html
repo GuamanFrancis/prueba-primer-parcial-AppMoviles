@@ -1,0 +1,109 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      Formulario de Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <form (ngSubmit)="guardarDatos()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Datos Personales</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input [(ngModel)]="formData.nombre" name="nombre" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input [(ngModel)]="formData.apellido" name="apellido" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="formData.correo" name="correo" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>Sexo</ion-label>
+        </ion-item>
+        <ion-radio-group [(ngModel)]="formData.sexo" name="sexo">
+          <ion-item>
+            <ion-label>Masculino</ion-label>
+            <ion-radio slot="start" value="Masculino"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Femenino</ion-label>
+            <ion-radio slot="start" value="Femenino"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Otro</ion-label>
+            <ion-radio slot="start" value="Otro"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
+        <ion-item lines="none">
+          <ion-label>Etnia</ion-label>
+        </ion-item>
+        <ion-radio-group [(ngModel)]="formData.etnia" name="etnia">
+          <ion-item>
+            <ion-label>Mestizos</ion-label>
+            <ion-radio slot="start" value="mestizos"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Indígenas</ion-label>
+            <ion-radio slot="start" value="indígenas"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Afroecuatorianos</ion-label>
+            <ion-radio slot="start" value="afroecuatorianos"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Montubios</ion-label>
+            <ion-radio slot="start" value="montubios"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Blancos</ion-label>
+            <ion-radio slot="start" value="blancos"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
+        <ion-item>
+          <ion-label position="floating">Edad</ion-label>
+          <ion-input type="number" [(ngModel)]="formData.edad" name="edad" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Dirección</ion-label>
+          <ion-input [(ngModel)]="formData.direccion" name="direccion"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Número de cédula</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.cedula" name="cedula" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Estado Civil</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.estado" name="estadoC" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Fecha Actual</ion-label>
+          <ion-datetime type="text" [(ngModel)]="formData.Date" name="Date" required>Date</ion-datetime>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" color="success" class="ion-margin-top">
+          Guardar Datos
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>
